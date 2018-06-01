@@ -18,8 +18,8 @@ namespace TestFunctionGW040x {
     /// </summary>
     public partial class LOGIN : Window {
         public LOGIN() {
-            this.Top = GlobalData.thisLocation.top + (GlobalData.thisLocation.height / 2) - 75;
-            this.Left = GlobalData.thisLocation.left + (GlobalData.thisLocation.width - 250) / 2;
+            //this.Top = GlobalData.thisLocation.top + (GlobalData.thisLocation.height / 2) - 75;
+            //this.Left = GlobalData.thisLocation.left + (GlobalData.thisLocation.width - 250) / 2;
             InitializeComponent();
         }
 

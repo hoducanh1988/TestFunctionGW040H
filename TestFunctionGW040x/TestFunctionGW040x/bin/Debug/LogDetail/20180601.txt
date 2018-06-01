@@ -1,0 +1,1849 @@
+NHẬP VÀ KIỂM TRA ĐỊA CHỈ MAC ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+...A4F4C2909090
+Kiểm tra địa chỉ MAC có hợp lệ...
+...Chiều dài=12, Hợp lệ
+...6 kí tự đầu=A4F4C2, Hợp lệ
+...Định dạng kí tự [A-F,0-9], Hợp lệ
+=> Địa chỉ MAC hợp lệ
+Bật nguồn ONT...
+=> ONT khởi động hoàn thành
+...
+<
+
+KIỂM TRA VERSION FIRMWARE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin phiên bản Firmware...
+...G040DEVN00R015
+...Tiêu chuẩn: 
+=> Phán định: FAIL
+...
+<
+
+KIỂM TRA ĐỊA CHỈ MAC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin địa chỉ MAC...
+...A4F4C2909090
+...Tiêu chuẩn: A4F4C2909090
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA CỔNG LAN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin trạng thái cổng LAN_1...
+...ethphxcmd eth0 media-type port 0
+auto, Auto-negotiation enabled.
+The autonegotiated media type is 100baseTx-FD.
+Link is up
+# 
+...Trạng thái LAN_1: PASS
+Đọc thông tin trạng thái cổng LAN_2...
+...ethphxcmd eth0 media-type port 1
+auto, Auto-negotiation enabled.
+No common media type was autonegotiated!
+This is extremely unusual and typically indicates a configuration error.
+Perhaps the advertised capability set was intentionally limited.
+Link is down
+# 
+...Trạng thái LAN_2: FAIL
+Đọc thông tin trạng thái cổng LAN_3...
+...ethphxcmd eth0 media-type port 2
+auto, Auto-negotiation enabled.
+No common media type was autonegotiated!
+This is extremely unusual and typically indicates a configuration error.
+Perhaps the advertised capability set was intentionally limited.
+Link is down
+# 
+...Trạng thái LAN_3: FAIL
+Đọc thông tin trạng thái cổng LAN_4...
+...ethphxcmd eth0 media-type port 3
+auto, Auto-negotiation enabled.
+No common media type was autonegotiated!
+This is extremely unusual and typically indicates a configuration error.
+Perhaps the advertised capability set was intentionally limited.
+Link is down
+# 
+...Trạng thái LAN_4: FAIL
+=> Phán định: FAIL
+...
+<
+
+KIỂM TRA CỔNG USB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin cổng USB...
+...mount -t usbfs usbfs /proc/bus/usb/
+# cat /proc/bus/usb/devices
+
+T:  Bus=02 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=5000 MxCh= 1
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0003 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=5000 MxCh= 4
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=2109 ProdID=0812 Rev= b.e1
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB3.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=13(Int.) MxPS=   2 Ivl=16ms
+
+T:  Bus=02 Lev=02 Prnt=02 Port=00 Cnt=01 Dev#=  3 Spd=5000 MxCh= 0
+D:  Ver= 3.10 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=  1
+P:  Vendor=0951 ProdID=1666 Rev= 1.00
+S:  Manufacturer=Kingston
+S:  Product=DataTraveler 3.0
+S:  SerialNumber=60A44C3FAC18B230D967039E
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=126mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+
+T:  Bus=01 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=480  MxCh= 2
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0002 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=01 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=480  MxCh= 4
+D:  Ver= 2.10 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=2109 ProdID=2812 Rev= b.e0
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB2.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   1 Ivl=256ms
+
+T:  Bus=01 Lev=02 Prnt=02 Port=01 Cnt=01 Dev#=  3 Spd=480  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=125f ProdID=c96a Rev=11.00
+S:  Manufacturer=ADATA
+S:  Product=ADATA USB Flash Drive
+S:  SerialNumber=147041949220023C
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=300mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS= 512 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS= 512 Ivl=31875us
+# 
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA ĐỒNG BỘ QUANG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào OLT...
+...FAIL
+...
+<
+
+KIỂM TRA CÔNG SUẤT QUANG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Failed to connect : no login prompt
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc giá trị công suất thu RX...
+...tcapi get Info_PonPhy RxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -28dBm đến -8dBm
+Kết quả đo công suất thu RX là: FAIL
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -8dBm đến 8dBm
+Kết quả đo công suất phát TX là: FAIL
+...
+<
+
+***************************************************************************************
+PHÁN ĐỊNH TỔNG: FAIL
+
+
+NHẬP VÀ KIỂM TRA ĐỊA CHỈ MAC ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+...A4F4C2909090
+Kiểm tra địa chỉ MAC có hợp lệ...
+...Chiều dài=12, Hợp lệ
+...6 kí tự đầu=A4F4C2, Hợp lệ
+...Định dạng kí tự [A-F,0-9], Hợp lệ
+=> Địa chỉ MAC hợp lệ
+Bật nguồn ONT...
+=> ONT khởi động hoàn thành
+...
+<
+
+KIỂM TRA VERSION FIRMWARE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin phiên bản Firmware...
+...G040DEVN00R015
+...Tiêu chuẩn: 
+=> Phán định: FAIL
+...
+<
+
+KIỂM TRA ĐỊA CHỈ MAC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin địa chỉ MAC...
+...A4F4C2909090
+...Tiêu chuẩn: A4F4C2909090
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA CỔNG LAN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Failed to connect : no login prompt
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin trạng thái cổng LAN_1...
+...ethphxcmd eth0 media-type port 0
+auto, Auto-negotiation enabled.
+The autonegotiated media type is 100baseTx-FD.
+Link is up
+# 
+...Trạng thái LAN_1: PASS
+Đọc thông tin trạng thái cổng LAN_2...
+...ethphxcmd eth0 media-type port 1
+auto, Auto-negotiation enabled.
+No common media type was autonegotiated!
+This is extremely unusual and typically indicates a configuration error.
+Perhaps the advertised capability set was intentionally limited.
+Link is down
+# 
+...Trạng thái LAN_2: FAIL
+Đọc thông tin trạng thái cổng LAN_3...
+...ethphxcmd eth0 media-type port 2
+auto, Auto-negotiation enabled.
+No common media type was autonegotiated!
+This is extremely unusual and typically indicates a configuration error.
+Perhaps the advertised capability set was intentionally limited.
+Link is down
+# 
+...Trạng thái LAN_3: FAIL
+Đọc thông tin trạng thái cổng LAN_4...
+...ethphxcmd eth0 media-type port 3
+auto, Auto-negotiation enabled.
+No common media type was autonegotiated!
+This is extremely unusual and typically indicates a configuration error.
+Perhaps the advertised capability set was intentionally limited.
+Link is down
+# 
+...Trạng thái LAN_4: FAIL
+=> Phán định: FAIL
+...
+<
+
+KIỂM TRA CỔNG USB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Failed to connect : no login prompt
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin cổng USB...
+...mount -t usbfs usbfs /proc/bus/usb/
+mount: Mounting usbfs on /proc/bus/usb failed: Device or resource busy
+# cat /proc/bus/usb/devices
+
+T:  Bus=02 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=5000 MxCh= 1
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0003 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=5000 MxCh= 4
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=2109 ProdID=0812 Rev= b.e1
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB3.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=13(Int.) MxPS=   2 Ivl=16ms
+
+T:  Bus=02 Lev=02 Prnt=02 Port=00 Cnt=01 Dev#=  3 Spd=5000 MxCh= 0
+D:  Ver= 3.10 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=  1
+P:  Vendor=0951 ProdID=1666 Rev= 1.00
+S:  Manufacturer=Kingston
+S:  Product=DataTraveler 3.0
+S:  SerialNumber=60A44C3FAC18B230D967039E
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=126mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+
+T:  Bus=01 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=480  MxCh= 2
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0002 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=01 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=480  MxCh= 4
+D:  Ver= 2.10 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=2109 ProdID=2812 Rev= b.e0
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB2.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   1 Ivl=256ms
+
+T:  Bus=01 Lev=02 Prnt=02 Port=01 Cnt=01 Dev#=  3 Spd=480  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=125f ProdID=c96a Rev=11.00
+S:  Manufacturer=ADATA
+S:  Product=ADATA USB Flash Drive
+S:  SerialNumber=147041949220023C
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=300mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS= 512 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS= 512 Ivl=31875us
+# 
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA ĐỒNG BỘ QUANG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào OLT...
+...FAIL
+...
+<
+
+KIỂM TRA CÔNG SUẤT QUANG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc giá trị công suất thu RX...
+...tcapi get Info_PonPhy RxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ -30dBm đến -26dBm
+Kết quả đo công suất thu RX là: FAIL
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Đọc giá trị công suất phát TX...
+...tcapi get Info_PonPhy TxPower
+1
+# 
+...Giá trị quy đổi -40dBm
+...Tiêu chuẩn từ 0dBm đến 5dBm
+Kết quả đo công suất phát TX là: FAIL
+...
+<
+
+***************************************************************************************
+PHÁN ĐỊNH TỔNG: FAIL
+
+
+NHẬP VÀ KIỂM TRA ĐỊA CHỈ MAC ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+...A4F4C2909090
+Kiểm tra địa chỉ MAC có hợp lệ...
+...Chiều dài=12, Hợp lệ
+...6 kí tự đầu=A4F4C2, Hợp lệ
+...Định dạng kí tự [A-F,0-9], Hợp lệ
+=> Địa chỉ MAC hợp lệ
+Bật nguồn ONT...
+=> ONT khởi động hoàn thành
+...
+<
+
+KIỂM TRA ĐỊA CHỈ MAC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin địa chỉ MAC...
+...A4F4C2909090
+...Tiêu chuẩn: A4F4C2909090
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA VERSION FIRMWARE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Unable to write data to the transport connection: An established connection was aborted by the software in your host machine.
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin phiên bản Firmware...
+...G040DEVN00R015
+...Tiêu chuẩn: G040DEVN00R015
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA CỔNG USB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin cổng USB...
+...mount -t usbfs usbfs /proc/bus/usb/
+mount: Mounting usbfs on /proc/bus/usb failed: Device or resource busy
+# cat /proc/bus/usb/devices
+
+T:  Bus=02 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=5000 MxCh= 1
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0003 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=5000 MxCh= 4
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=2109 ProdID=0812 Rev= b.e1
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB3.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=13(Int.) MxPS=   2 Ivl=16ms
+
+T:  Bus=02 Lev=02 Prnt=02 Port=00 Cnt=01 Dev#=  3 Spd=5000 MxCh= 0
+D:  Ver= 3.10 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=  1
+P:  Vendor=0951 ProdID=1666 Rev= 1.00
+S:  Manufacturer=Kingston
+S:  Product=DataTraveler 3.0
+S:  SerialNumber=60A44C3FAC18B230D967039E
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=126mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+
+T:  Bus=01 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=480  MxCh= 2
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0002 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=01 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=480  MxCh= 4
+D:  Ver= 2.10 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=2109 ProdID=2812 Rev= b.e0
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB2.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   1 Ivl=256ms
+
+T:  Bus=01 Lev=02 Prnt=02 Port=01 Cnt=01 Dev#=  3 Spd=480  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=125f ProdID=c96a Rev=11.00
+S:  Manufacturer=ADATA
+S:  Product=ADATA USB Flash Drive
+S:  SerialNumber=147041949220023C
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=300mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS= 512 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS= 512 Ivl=31875us
+# 
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA LED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Unable to write data to the transport connection: An established connection was aborted by the software in your host machine.
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Hiển thị Form xác nhận LED
+Bật sáng tất cả các LED.
+...Bật LED LOS.
+...Bật LED WLAN.
+...Bật LED WPS.
+...Bật LED PON.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED LOS.
+...Bật LED WLAN.
+...Bật LED WPS.
+...Bật LED PON.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...
+LED POWER = PASS
+LED PON = PASS
+LED INET = PASS
+LED WLAN = PASS
+LED LAN1 = PASS
+LED LAN2 = PASS
+LED LAN3 = PASS
+LED LAN4 = PASS
+LED WPS = PASS
+LED LOS = PASS
+...
+=> Phán định: PASS
+...
+<
+KIỂM TRA NÚT NHẤN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Hiển thị Form xác nhận nút nhấn WPS
+Đọc debugger log...
+...cat proc/kmsg &
+# ===================
+<4>===============================
+<4>Current StaRec Num: 0
+<4>===============================
+<4>APWdsInitialize():WdsEntry[0]
+<4>APWdsInitialize():WdsEntry[1]
+<4>APWdsInitialize():WdsEntry[2]
+<4>APWdsInitialize():WdsEntry[3]
+<4>multi-profile merge success, en:1,pf1_num:4,pf2_num:4,total:8
+<4>MacAddress4 = 00:00:00:00:00:00
+<4>SSID[0]=GW040_5G_012340, EdcaIdx=0
+<4>SSID[1]=GW040_5G_Guest1, EdcaIdx=0
+<4>SSID[2]=GW040_5G_Guest2, EdcaIdx=0
+<4>SSID[3]=GW040_5G_Guest3, EdcaIdx=0
+<4>SSID[4]=GW040_2.4G_012340, EdcaIdx=1
+<4>SSID[5]=GW040_2.4G_Guest1, EdcaIdx=1
+<4>SSID[6]=GW040_2.4G_Guest2, EdcaIdx=1
+<4>SSID[7]=Vinaphone_Wifi, EdcaIdx=1
+<4>RTMPSetProfileParameters(): DBDC Mode=1
+<4>cfg_mode=14
+<4>cfg_mode=14
+<4>wmode_band_equal(): Band Equal!
+<4>cfg_mode=14
+<4>cfg_mode=14
+<4>cfg_mode=14
+<4>cfg_mode=14
+<4>cfg_mode=14
+<4>cfg_mode=14
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>cfg_mode=9
+<4>BandSteering=1
+<4>BndStrgBssIdx=1;0;0;0;1;0;0;0
+<4>[34m[TxPower] BAND0: 100, BAND1: 100 
+<4>[0m[34m[PERCENTAGEenable] BAND0: 1, BAND1: 1 
+<4>[0mAPEdca0
+<4>Valid=1
+<4>APAifsn[0]=3
+<4>APAifsn[1]=7
+<4>APAifsn[2]=1
+<4>APAifsn[3]=1
+<4>APEdca1
+<4>Valid=1
+<4>APAifsn[0]=3
+<4>APAifsn[1]=7
+<4>APAifsn[2]=1
+<4>APAifsn[3]=1
+<4>APEdca2
+<4>APEdca3
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>BSSAifsn[0]=3
+<4>BSSAifsn[1]=7
+<4>BSSAifsn[2]=2
+<4>BSSAifsn[3]=2
+<4>APSDCapable[0]=0
+<4>APSDCapable[1]=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=0, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=1, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=2, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=3, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=4, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=5, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=6, Desired MFPC=0
+<4>[PMF]Set_PMFMFPC_Proc:: apidx=7, Desired MFPC=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=0, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=1, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=2, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=3, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=4, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=5, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=6, Desired MFPR=0
+<4>[PMF]Set_PMFMFPR_Proc:: apidx=7, Desired MFPR=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=0, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=1, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=2, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=3, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=4, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=5, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=6, Desired PMFSHA256=0
+<4>[PMF]Set_PMFSHA256_Proc:: apidx=7, Desired PMFSHA256=0
+<4>rtmp_read_wds_from_file(): WDS Profile
+<4>APWdsInitialize():WdsEntry[0]
+<4>APWdsInitialize():WdsEntry[1]
+<4>APWdsInitialize():WdsEntry[2]
+<4>APWdsInitialize():WdsEntry[3]
+<4>WDS-Enable mode=0
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>HT: Ext Channel = BELOW
+<4>WtcSetMaxStaNum: MaxStaNum:116, BssidNum:8, WdsNum:4, ApcliNum:0, MaxNumChipRept:0, MinMcastWcid:120
+<4>Top Init Done!
+<4>Use dev_alloc_skb
+<4>cut_through_token_list_init(): TokenList inited done!id_head/tail=0/4096
+<4>cut_through_token_list_init(): 8c67ba88,8c67ba88
+<4>cut_through_token_list_init(): TokenList inited done!id_head/tail=0/4096
+<4>cut_through_token_list_init(): 8c67ba98,8c67ba98
+<4>RX[0] DESC ac210000 size = 8192
+<4>RX[1] DESC ac212000 size = 8192
+<4>Hif Init Done!
+<4>ctl->txq = c2d998a8
+<4>ctl->rxq = c2d998b4
+<4>ctl->ackq = c2d998c0
+<4>ctl->kickq = c2d998cc
+<4>ctl->tx_doneq = c2d998d8
+<4>ctl->rx_doneq = c2d998e4
+<4>mt7615_fw_prepare():FW(8a10), HW(8a10), CHIPID(7615))
+<4>mt7615_fw_prepare(2766): MT7615_E3, USE E3 patch and ram code binary image
+<4>AndesMTLoadRomMethodFwDlRing(1036), cap->rom_patch_len(11150)
+<4>AndesRestartCheck: Current TOP_MISC2(0x1)
+<4>AndesRestartCheck: (TOP_MISC2 = 1), ready to continue...RET(0)
+<4>20170714031500a
+<4>
+<4>platform = 
+<4>ALPS
+<4>hw/sw version = 
+<4>8a108a10
+<4>patch version = 
+<4>00000010
+<4>Patch SEM Status=1
+<4>MtCmdPatchSemGet:(ret = 0)
+<4>
+<4>Patch is ready, continue to ILM/DLM DL, SemStatus(1)
+<4>Patch SEM Status=3
+<4>MtCmdPatchSemGet:(ret = 0)
+<4>
+<4>Release patch semaphore, SemStatus(3)
+<4>AndesMTEraseRomPatch
+<4>WfMcuHwInit: Before NICLoadFirmware, check IcapMode=0
+<4>AndesMTLoadFwMethodFwDlRing(810), cap->fw_len(459768)
+<4>Build Date:_201708281735
+<4>Build Date:_201708281735
+<4>AndesRestartCheck: Current TOP_MISC2(0x1)
+<4>AndesRestartCheck: (TOP_MISC2 = 1), ready to continue...RET(0)
+<4>EventGenericEventHandler: CMD Success
+<4>MtCmdAddressLenReq:(ret = 0)
+<4>EventGenericEventHandler: CMD Success
+<4>MtCmdAddressLenReq:(ret = 0)
+<4>MtCmdFwStartReq: override = 1, address = 540672
+<4>EventGenericEventHandler: CMD Success
+<4>Build Date:_201703141726
+<4>EventGenericEventHandler: CMD Success
+<4>MtCmdAddressLenReq:(ret = 0)
+<4>MtCmdFwStartReq: override = 4, address = 0
+<4>EventGenericEventHandler: CMD Success
+<4>WfMcuHwInit: NICLoadFirmware OK, Check IcapMode=0
+<4>MCU Init Done!
+<4>MtCmdSetTxLpfCal:(ret = 0)
+<4>MtCmdSetTxIqCal:(ret = 0)
+<4>MtCmdSetTxDcCal:(ret = 0)
+<4>MtCmdSetRxFiCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>MtCmdSetRxFdCal:(ret = 0)
+<4>[41m MtCmdSetRlmPorCal: (ret = 0)[m 
+<4>efuse_probe: efuse = 10000212
+<4>RtmpChipOpsEepromHook::e2p_type=4, inf_Type=5
+<4>RtmpEepromGetDefault::e2p_dafault=1
+<4>RtmpChipOpsEepromHook: E2P type(4), E2pAccessMode = 4, E2P default = 1
+<4>NVM is BIN mode
+<4>NICReadEEPROMParameters():Calling eeinit
+<4>rtmp_ee_load_from_bin::src FileName=/etc/Wireless/RT2860AP_AC/RT30xxEEPROM.bin
+<4>Load EEPROM Buffer from /etc/Wireless/RT2860AP_AC/RT30xxEEPROM.bin
+<4>rtmp_cal_load_from_bin::FileName=/etc/Wireless/RT2860AP_AC/CALDATA_default.bin
+<4>Load from /etc/Wireless/RT2860AP_AC/CALDATA_default.bin (Read = 9216)
+<4>rtmp_cal_load_from_bin::FileName=/etc/Wireless/RT2860AP_AC/CALDATA_default.bin
+<4>Load from /etc/Wireless/RT2860AP_AC/CALDATA_default.bin (Read = 9216)
+<4>rtmp_cal_load_from_bin::FileName=/etc/Wireless/RT2860AP_AC/CALDATA_default.bin
+<4>Load from /etc/Wireless/RT2860AP_AC/CALDATA_default.bin (Read = 9216)
+<4>Cal Free IC!!
+<4>[34mNICReadEEPROMParameters: EEPROM 0x52 b300[m
+<4>[34mNICReadEEPROMParameters: EEPROM 0x52 b300[m
+<4>now bb MainSsid mac a4:f4:c2:90:90:91
+<4>Country Region from e2p = 101
+<4>mt7615_antenna_default_reset(): TxPath = 4, RxPath = 4
+<4>mt7615_antenna_default_reset(): DBDC 2G TxPath = 2, 2G RxPath = 2
+<4>mt7615_antenna_default_reset(): DBDC 5G TxPath = 2, 2G RxPath = 2
+<4>rtmp_read_txpwr_from_eeprom(251): Don't Support this now!
+<4>RTMPReadTxPwrPerRate(1382): Don't Support this now!
+<4>RcRadioInit(): DbdcMode=1, ConcurrentBand=2
+<4>RcRadioInit(): pRadioCtrl=8e7c5324,Band=0,rfcap=1,channel=1,PhyMode=2
+<4>RcRadioInit(): pRadioCtrl=8e7c533c,Band=1,rfcap=2,channel=36,PhyMode=1
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>Band Rf: 1, Phy Mode: 2
+<4>Band Rf: 2, Phy Mode: 1
+<4>AntCfgInit(2792): Not support for HIF_MT yet!
+<4>EEPROM Init Done!
+<4>mt_mac_init()-->
+<4>mt_mac_pse_init(2787): Don't Support this now!
+<4>mt7615_init_mac_cr()-->
+<4>mt7615_init_mac_cr(): TMAC_TRCR0=0x82783c8c
+<4>mt7615_init_mac_cr(): TMAC_TRCR1=0x82783c8c
+<4>MtAsicSetMacMaxLen(1313): Not finish Yet!
+<4><--mt_mac_init()
+<4>CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+<4>CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+<4>CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+<4>MAC Init Done!
+<4>MT7615BBPInit():BBP Initialization.....
+<4>     Band 0: valid=1, isDBDC=0, Band=2, CBW=1, CentCh/PrimCh=1/1, prim_ch_idx=0, txStream=2
+<4>     Band 1: valid=0, isDBDC=0, Band=0, CBW=0, CentCh/PrimCh=0/0, prim_ch_idx=0, txStream=0
+<4>MT7615BBPInit() todo 
+<4>PHY Init Done!
+<4>tx_pwr_comp_init():NotSupportYet!
+<4>MtCmdSetMacTxRx:(ret = 0)
+<4>MtCmdSetMacTxRx:(ret = 0)
+<4>CountryCode(2.4G/5G)=0/13, RFIC=25, PHY mode(2.4G/5G)=14/49, support 36 channels
+<4>WifiSysOpen(), wdev idx = 0
+<4>wdev_attr_update(): wdevId0 = a4:f4:c2:90:90:91
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>ApAutoChannelAtBootUp----------------->
+<4>ApAutoChannelAtBootUp: AutoChannelBootup = 0, AutoChannelFlag = 255
+<4>ApAutoChannelAtBootUp<-----------------
+<4>Current Channel is 36. DfsZeroWaitSupport=0
+<4>[PMF]APPMFInit:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+<4>HcUpdatePhyMode(): Update PhyMode for all wdev for this band PhyMode:49,Channel=36
+<4>CountryCode(2.4G/5G)=0/13, RFIC=25, PHY mode(2.4G/5G)=14/49, support 36 channels
+<4>Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+<4>wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:127 for WDEV_TYPE:1
+<4> LinkToOmacIdx = 0, LinkToWdevType = 1
+<4>[RadarStateCheck]Set into RD_NORMAL_MODE
+<4>MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 1
+<4>MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 0, BandIdx: 1
+<4>bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO),                 CmdBssInfoBmcRate.u2BcTransmit= 8192,                 CmdBssInfoBmcRate.u2McTransmit = 8192
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>mt7615_bbp_adjust():rf_bw=1, ext_ch=1, PrimCh=36, HT-CentCh=38, VHT-CentCh=36
+<4>mt7615_apply_cal_data() : eeprom 0x52 bit 1 is 0, do runtime cal , skip RX reload
+<4>mt7615_apply_cal_data() : eeprom 0x52 bit 0 is 0, do runtime cal , skip TX reload
+<4>MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 38 DBDCIdx= 1, Band= 0 
+<4>BW = 1,TXStream = 2, RXStream = 2, scan(0)
+<4>ap_phy_rrm_init_byRf(): AP Set CentralFreq at 38(Prim=36, HT-CentCh=38, VHT-CentCh=36, BBP_BW=1)
+<4>[WrapDfsRadarDetectStart]: Band0Ch is 36[WrapDfsRadarDetectStart]: Band1Ch is 0LeadTimeForBcn, OmacIdx = 0, WDEV_WITH_BCN_ABILITY
+<4>MtAsicSetRalinkBurstMode(2618): Not support for HIF_MT yet!
+<4>MtAsicSetPiggyBack(802): Not support for HIF_MT yet!
+<4>MtAsicSetTxPreamble(2597): Not support for HIF_MT yet!
+<4>RTMPSetLEDStatus: before AndesLedEnhanceOP , status=1, LED_CMD=2!
+<4>AndesLedEnhanceOP: Success!
+<4>[1;33mBndStrg_Init() ----> ap_band_steering_plus.c
+<4>[0mMain bssid = a4:f4:c2:90:90:91
+<4>AsicRadioOnOffCtrl(): DbdcIdx=1 RadioOn
+<4>MtCmdSetMacTxRx:(ret = 0)
+<4>MtCmdSetMacTxRx:(ret = 0)
+<4>fdb_enable()
+<4>MCS Set = ff ff 00 00 01
+<4><==== mt_wifi_init, Status=0
+<4>MtCmdEDCCACtrl: BandIdx: 0, EDCCACtrl: 1 
+<4>MtCmdEDCCACtrl: BandIdx: 1, EDCCACtrl: 1 
+<4>WtcSetMaxStaNum: MaxStaNum:116, BssidNum:8, WdsNum:4, ApcliNum:0, MaxNumChipRept:0, MinMcastWcid:120
+<4>:MtCmdPktBudgetCtrl: bssid(255),wcid(65535),type(0)
+<4>red_is_enabled: set CR4/N9 RED Enable to 1.
+<4>cp_support_is_enabled: set CR4 CP_SUPPORT to Mode 2.
+<4>[1;36mBndStrg_SetInfFlags(): BSS(A4:F4:C2:90:90:91)[0m[1;36m set 5G Inf rai0 ready.
+<4>[0mCorrect apidx from 7 to 0 for WscUUIDInit
+<4>Generate UUID for apidx(0)
+<4>UUID: c2bb42e4, len = 16
+<4>0x0000 : bc 32 9e 00 1d d8 11 b2 86 01 a4 f4 c2 90 90 91 
+<4>
+<6>device rai0 entered promiscuous mode
+<6>br0: port 1(rai0) entering forwarding state
+<6>br0: port 1(rai0) entering forwarding state
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-02-00-00-01
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>00
+<4>00
+<4>01
+<4>AndesLedEnhanceOP: Success!
+<4>tr069 tcapi mode is 1
+<4>WifiSysOpen(), wdev idx = 4
+<4>wdev_attr_update(): wdevId4 = a4:f4:c2:90:90:90
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>[PMF]APPMFInit:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+<4>HcUpdatePhyMode(): Update PhyMode for all wdev for this band PhyMode:14,Channel=1
+<4>CountryCode(2.4G/5G)=0/13, RFIC=25, PHY mode(2.4G/5G)=14/49, support 36 channels
+<4>Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+<4>wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:126 for WDEV_TYPE:1
+<4> LinkToOmacIdx = 14, LinkToWdevType = 1
+<4>[RadarStateCheck]Set into RD_NORMAL_MODE
+<4>MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 0
+<4>MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 0, BandIdx: 0
+<4>bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO),                 CmdBssInfoBmcRate.u2BcTransmit= 0,                 CmdBssInfoBmcRate.u2McTransmit = 0
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>mt7615_bbp_adjust():rf_bw=0, ext_ch=0, PrimCh=1, HT-CentCh=1, VHT-CentCh=36
+<4>mt7615_apply_cal_data() : eeprom 0x52 bit 1 is 0, do runtime cal , skip RX reload
+<4>mt7615_apply_cal_data() : eeprom 0x52 bit 0 is 0, do runtime cal , skip TX reload
+<4>MtCmdChannelSwitch: control_chl = 1,control_ch2=0, central_chl = 1 DBDCIdx= 0, Band= 0 
+<4>BW = 0,TXStream = 2, RXStream = 2, scan(0)
+<4>ap_phy_rrm_init_byRf(): AP Set CentralFreq at 1(Prim=1, HT-CentCh=1, VHT-CentCh=36, BBP_BW=0)
+<4>[1;36mBndStrg_SetInfFlags(): BSS(A4:F4:C2:90:90:90)[0m[1;36m set 2G Inf ra0 ready.
+<4>[0mLeadTimeForBcn, OmacIdx = 14, WDEV_WITH_BCN_ABILITY
+<4>Generate UUID for apidx(4)
+<4>UUID: c2bc1b64, len = 16
+<4>0x0000 : bc 32 9e 00 1d d8 11 b2 86 01 a4 f4 c2 90 90 90 
+<4>
+<4>WifiSysClose(), wdev idx = 4
+<4>ExtEventBeaconLostHandler::FW LOG, Beacon lost (a4:f4:c2:90:90:90), Reason 0x10
+<4>  Beacon lost - AP disabled!!!
+<4>WifiSysGetBssInfoState(): BssInfoIdx 1 not found!!!
+<4>WifiSysUpdateBssInfoState(): BssInfoIdx 1 not found!!!
+<4>[1;36mBndStrg_SetInfFlags(): BSS(A4:F4:C2:90:90:90)[0m[1;36m set 2G Inf ra0 not ready.
+<4>[0mWifiSysOpen(), wdev idx = 4
+<4>wdev_attr_update(): wdevId4 = a4:f4:c2:90:90:90
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>[PMF]APPMFInit:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+<4>HcUpdatePhyMode(): Update PhyMode for all wdev for this band PhyMode:14,Channel=1
+<4>CountryCode(2.4G/5G)=0/13, RFIC=25, PHY mode(2.4G/5G)=14/49, support 36 channels
+<4>Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+<4>wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:126 for WDEV_TYPE:1
+<4> LinkToOmacIdx = 14, LinkToWdevType = 1
+<4>[RadarStateCheck]Set into RD_NORMAL_MODE
+<4>MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 0
+<4>bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO),                 CmdBssInfoBmcRate.u2BcTransmit= 0,                 CmdBssInfoBmcRate.u2McTransmit = 0
+<4>MtCmdSetDbdcCtrl:(ret = 0)
+<4>MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 0, BandIdx: 0
+<4>mt7615_bbp_adjust():rf_bw=0, ext_ch=0, PrimCh=1, HT-CentCh=1, VHT-CentCh=36
+<4>mt7615_apply_cal_data() : eeprom 0x52 bit 1 is 0, do runtime cal , skip RX reload
+<4>mt7615_apply_cal_data() : eeprom 0x52 bit 0 is 0, do runtime cal , skip TX reload
+<4>MtCmdChannelSwitch: control_chl = 1,control_ch2=0, central_chl = 1 DBDCIdx= 0, Band= 0 
+<4>BW = 0,TXStream = 2, RXStream = 2, scan(0)
+<4>ap_phy_rrm_init_byRf(): AP Set CentralFreq at 1(Prim=1, HT-CentCh=1, VHT-CentCh=36, BBP_BW=0)
+<4>[1;36mBndStrg_SetInfFlags(): BSS(A4:F4:C2:90:90:90)[0m[1;36m set 2G Inf ra0 ready.
+<4>[0mLeadTimeForBcn, OmacIdx = 14, WDEV_WITH_BCN_ABILITY
+<4>Generate UUID for apidx(4)
+<4>UUID: c2bc1b64, len = 16
+<4>0x0000 : bc 32 9e 00 1d d8 11 b2 86 01 a4 f4 c2 90 90 90 
+<4>
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-02-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+<6>device ra0 entered promiscuous mode
+<6>br0: port 6(ra0) entering forwarding state
+<6>br0: port 6(ra0) entering forwarding state
+<4>ThreadedTimerCheck: get last for first time
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+
+Đọc debugger log...
+...cat proc/kmsg &
+# 
+Đọc debugger log...
+...cat proc/kmsg &
+# 
+Đọc debugger log...
+...cat proc/kmsg &
+# 
+Đọc debugger log...
+...<4>
+<4>VNPTT-WPS button is pressed.
+cat proc/kmsg &
+# <4>
+<4>cc.c, 6106 Press wps button.
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+
+Kết quả kiểm tra nút WPS: PASS
+Hiển thị Form xác nhận nút nhấn Reset
+Đọc debugger log...
+...cat proc/kmsg &
+# <4>MtCmdGetThermalSensorResult:(ret = 0)
+0-00-00-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-0<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-02-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+>MtCmdGetThermalSensorResult:(ret = 0)
+<4
+Đọc debugger log...
+...cat proc/kmsg &
+# <4>xyyou:write bin to flash !
+<4>
+<4>VNPTT-RESET button is pressed.
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+
+Kết quả kiểm tra nút Reset: PASS
+...
+<
+***************************************************************************************
+PHÁN ĐỊNH TỔNG: PASS
+
+
+NHẬP VÀ KIỂM TRA ĐỊA CHỈ MAC ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+...A4F4C2909090
+Kiểm tra địa chỉ MAC có hợp lệ...
+...Chiều dài=12, Hợp lệ
+...6 kí tự đầu=A4F4C2, Hợp lệ
+...Định dạng kí tự [A-F,0-9], Hợp lệ
+=> Địa chỉ MAC hợp lệ
+Bật nguồn ONT...
+=> ONT khởi động hoàn thành
+...
+<
+
+KIỂM TRA VERSION FIRMWARE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin phiên bản Firmware...
+...G040DEVN00R015
+...Tiêu chuẩn: G040DEVN00R015
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA ĐỊA CHỈ MAC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Unable to write data to the transport connection: An established connection was aborted by the software in your host machine.
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin địa chỉ MAC...
+...A4F4C2909090
+...Tiêu chuẩn: A4F4C2909090
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA CỔNG USB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+Failed to connect : no login prompt
+...FAIL
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Đọc thông tin cổng USB...
+...mount -t usbfs usbfs /proc/bus/usb/
+mount: Mounting usbfs on /proc/bus/usb failed: Device or resource busy
+# cat /proc/bus/usb/devices
+
+T:  Bus=02 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=5000 MxCh= 1
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0003 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=5000 MxCh= 4
+D:  Ver= 3.00 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
+P:  Vendor=2109 ProdID=0812 Rev= b.e1
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB3.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=13(Int.) MxPS=   2 Ivl=16ms
+
+T:  Bus=02 Lev=02 Prnt=02 Port=00 Cnt=01 Dev#=  3 Spd=5000 MxCh= 0
+D:  Ver= 3.10 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 9 #Cfgs=  1
+P:  Vendor=0951 ProdID=1666 Rev= 1.00
+S:  Manufacturer=Kingston
+S:  Product=DataTraveler 3.0
+S:  SerialNumber=60A44C3FAC18B230D967039E
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=126mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=1024 Ivl=0ms
+
+T:  Bus=01 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=480  MxCh= 2
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0002 Rev= 2.06
+S:  Manufacturer=Linux 2.6.36 xhci-hcd
+S:  Product=xHCI Host Controller
+S:  SerialNumber=xhc_mtk
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=01 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=480  MxCh= 4
+D:  Ver= 2.10 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=2109 ProdID=2812 Rev= b.e0
+S:  Manufacturer=VIA Labs, Inc.         
+S:  Product=USB2.0 Hub             
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:* If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   1 Ivl=256ms
+
+T:  Bus=01 Lev=02 Prnt=02 Port=01 Cnt=01 Dev#=  3 Spd=480  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=125f ProdID=c96a Rev=11.00
+S:  Manufacturer=ADATA
+S:  Product=ADATA USB Flash Drive
+S:  SerialNumber=147041949220023C
+C:* #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=300mA
+I:* If#= 0 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+E:  Ad=81(I) Atr=02(Bulk) MxPS= 512 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS= 512 Ivl=31875us
+# 
+=> Phán định: PASS
+...
+<
+
+KIỂM TRA LED >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Hiển thị Form xác nhận LED
+Bật sáng tất cả các LED.
+...Bật LED LOS.
+...Bật LED 2G.
+...Bật LED 5G.
+...Bật LED WPS.
+...Bật LED PON.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...Bật LED LOS.
+...Bật LED 2G.
+...Bật LED 5G.
+...Bật LED WPS.
+...Bật LED PON.
+...Bật LED INET xanh.
+...Bật LED INET đỏ.
+...
+LED POWER = PASS
+LED PON = PASS
+LED INET = PASS
+LED 2G = PASS
+LED 5G = PASS
+LED LAN1 = PASS
+LED LAN2 = PASS
+LED LAN3 = PASS
+LED LAN4 = PASS
+LED WPS = PASS
+LED LOS = PASS
+...
+=> Phán định: PASS
+...
+<
+KIỂM TRA NÚT NHẤN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+...
+Kết nối telnet vào ONT...
+...PASS
+Đăng nhập vào ONT {User=admin,Pass=ttcn@77CN}...
+tc login: admin
+Password: 
+# 
+...PASS
+Hiển thị Form xác nhận nút nhấn WPS
+Đọc debugger log...
+...cat proc/kmsg &
+# <4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-01
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>01
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-02-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-00
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4>VNPTT-WPS button is pressed.
+<4>
+<4>cc.c, 6106 Press wps button.
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+
+Kết quả kiểm tra nút WPS: PASS
+Hiển thị Form xác nhận nút nhấn Reset
+Đọc debugger log...
+...cat proc/kmsg &
+# <4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-02-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>
+<4>VNPTT-RESET button is pressed.
+<4>MtCmdGetThermalSensorResult:(ret = 0)
+<4>
+<4> Set_Led_Proc ==> arg = 01-00-00-00-00-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>01
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+<4>
+<4> Set_Led_Proc ==> arg = 00-00-00-00-02-00-00-02
+<4>
+<4>Set_Led_Proc
+<4>00
+<4>00
+<4>00
+<4>00
+<4>02
+<4>00
+<4>00
+<4>02
+<4>AndesLedEnhanceOP: Success!
+
+Kết quả kiểm tra nút Reset: PASS
+...
+<
+***************************************************************************************
+PHÁN ĐỊNH TỔNG: PASS
+
+

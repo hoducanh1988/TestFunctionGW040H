@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestFunctionGW040x"
         mc:Ignorable="d"
-        Title="frmLED" Height="175" Width="600" Style="{StaticResource customWindow}" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ShowActivated="False" ShowInTaskbar="False" Topmost="True">
+        Title="frmLED" Height="175" Width="690" Style="{StaticResource customWindow}" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ShowActivated="False" ShowInTaskbar="False" Topmost="True">
 
     <Border Opacity="1.0" CornerRadius="5" Background="#4035e8" BorderBrush="{StaticResource colorBorder}" BorderThickness="1">
         <Grid>
@@ -32,6 +32,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -156,7 +157,7 @@
                                 </Grid>
                             </Border>
                         </Grid>
-                        <Grid Grid.Row="0" Grid.Column="3" Margin="0,0,0,0">
+                        <Grid Grid.Row="0" Grid.Column="4" Margin="0,0,0,0">
                             <Border Width="105" Height="35" HorizontalAlignment="Left"
                                     BorderBrush="{StaticResource colorBorder}" BorderThickness="1" CornerRadius="15,15,15,15"
                                     x:Name="grWlan" MouseDown="Grid_MouseDown" Background="Transparent">
@@ -191,11 +192,50 @@
                                             </Label>
                                         </Grid>
                                     </Border>
-                                    <Label HorizontalAlignment="Left" Margin="40,0,0,0" FontSize="14" Foreground="White" FontWeight="SemiBold">WLAN</Label>
+                                    <Label HorizontalAlignment="Left" Margin="40,0,0,0" FontSize="14" Foreground="White" FontWeight="SemiBold">LED 2G</Label>
                                 </Grid>
                             </Border>
                         </Grid>
-                        <Grid Grid.Row="0" Grid.Column="4" Margin="0,0,0,0">
+                        <Grid Grid.Row="0" Grid.Column="5" Margin="0,0,0,0">
+                            <Border Width="105" Height="35" HorizontalAlignment="Left"
+                                    BorderBrush="{StaticResource colorBorder}" BorderThickness="1" CornerRadius="15,15,15,15"
+                                    x:Name="grWlan5g" MouseDown="Grid_MouseDown" Background="Transparent">
+                                <Grid >
+                                    <Border HorizontalAlignment="Left" Width="40" CornerRadius="15" BorderBrush="White" BorderThickness="0,0,1,0">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=WLAN5GJUD}" Value="true">
+                                                        <Setter Property="Background" Value="Lime"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=WLAN5GJUD}" Value="false">
+                                                        <Setter Property="Background" Value="Red"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label FontSize="14" Foreground="White" FontWeight="Bold">
+                                                <Label.Style>
+                                                    <Style TargetType="Label">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Path=WLAN5GJUD}" Value="true">
+                                                                <Setter Property="Content" Value="OK"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Path=WLAN5GJUD}" Value="false">
+                                                                <Setter Property="Content" Value="NG"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Label.Style>
+                                            </Label>
+                                        </Grid>
+                                    </Border>
+                                    <Label HorizontalAlignment="Left" Margin="40,0,0,0" FontSize="14" Foreground="White" FontWeight="SemiBold">LED 5G</Label>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="3" Margin="0,0,0,0">
                             <Border Width="105" Height="35" HorizontalAlignment="Left"
                                     BorderBrush="{StaticResource colorBorder}" BorderThickness="1" CornerRadius="15,15,15,15"
                                     x:Name="grWps" MouseDown="Grid_MouseDown" Background="Transparent">

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestFunctionGW040x"
         mc:Ignorable="d"
-        Title="LOGIN" Height="150" Width="250" Style="{StaticResource customWindow}" ShowActivated="True" ShowInTaskbar="False" Loaded="Window_Loaded" Topmost ="True">
+        Title="LOGIN" Height="150" Width="250" Style="{StaticResource customWindow}" WindowStartupLocation="CenterScreen" ShowActivated="True" ShowInTaskbar="False" Loaded="Window_Loaded" Topmost ="True">
 
     <Border CornerRadius="5" Background="{StaticResource colorBackground}" BorderBrush="{StaticResource colorBorder}" BorderThickness=".5">
         <Border CornerRadius="5" BorderBrush="{StaticResource colorBorder}" BorderThickness="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="150" Width="250">

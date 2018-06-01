@@ -557,6 +557,14 @@ namespace TestFunctionGW040x.Funtions
                 OnPropertyChanged(nameof(WLANJUD));
             }
         }
+        bool _wlan5gjud;
+        public bool WLAN5GJUD {
+            get { return _wlan5gjud; }
+            set {
+                _wlan5gjud = value;
+                OnPropertyChanged(nameof(WLAN5GJUD));
+            }
+        }
         bool _lan1jud;
         public bool LAN1JUD {
             get { return _lan1jud; }
@@ -781,6 +789,7 @@ namespace TestFunctionGW040x.Funtions
             this.PONJUD = true;
             this.INETJUD = true;
             this.WLANJUD = true;
+            this.WLAN5GJUD = true;
             this.LAN1JUD = true;
             this.LAN2JUD = true;
             this.LAN3JUD = true;

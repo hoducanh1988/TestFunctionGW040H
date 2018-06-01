@@ -90,8 +90,12 @@ namespace TestFunctionGW040x.Funtions {
                     ontdevice.WriteLine("echo 1 > /proc/xpon/los_led");
                     Thread.Sleep(100);
                     //bat den WLAN
-                    GlobalData.testingInfo.LOGSYSTEM += "...Bật LED WLAN.\r\n";
+                    GlobalData.testingInfo.LOGSYSTEM += "...Bật LED 2G.\r\n";
                     ontdevice.WriteLine("iwpriv ra0 set led_setting=00-00-00-00-00-00-00-00");
+                    Thread.Sleep(100);
+                    //bat den WLAN 5G
+                    GlobalData.testingInfo.LOGSYSTEM += "...Bật LED 5G.\r\n";
+                    ontdevice.WriteLine("echo 1 > proc/tc3162/led_wlan5g");
                     Thread.Sleep(100);
                     //bat den WPS
                     GlobalData.testingInfo.LOGSYSTEM += "...Bật LED WPS.\r\n";

@@ -21,17 +21,22 @@ namespace TestFunctionGW040x {
     public partial class MainWindow : Window {
 
         private void setStartupLocation() {
-            double scaleX = 0.75;
-            double scaleY = 0.95;
-            this.Height = SystemParameters.WorkArea.Height * scaleY;
-            this.Width = SystemParameters.WorkArea.Width * scaleX;
-            this.Top = (SystemParameters.WorkArea.Height * (1 - scaleY)) / 2;
-            this.Left = (SystemParameters.WorkArea.Width * (1 - scaleX)) / 2;
+            //double scaleX = 0.75;
+            //double scaleY = 0.95;
+            //this.Height = SystemParameters.WorkArea.Height * scaleY;
+            //this.Width = SystemParameters.WorkArea.Width * scaleX;
+            //this.Top = (SystemParameters.WorkArea.Height * (1 - scaleY)) / 2;
+            //this.Left = (SystemParameters.WorkArea.Width * (1 - scaleX)) / 2;
 
-            GlobalData.thisLocation.top = (SystemParameters.WorkArea.Height * (1 - scaleY)) / 2;
-            GlobalData.thisLocation.left = (SystemParameters.WorkArea.Width * (1 - scaleX)) / 2;
-            GlobalData.thisLocation.width = SystemParameters.WorkArea.Width * scaleX;
-            GlobalData.thisLocation.height = SystemParameters.WorkArea.Height * scaleY;
+            //GlobalData.thisLocation.top = (SystemParameters.WorkArea.Height * (1 - scaleY)) / 2;
+            //GlobalData.thisLocation.left = (SystemParameters.WorkArea.Width * (1 - scaleX)) / 2;
+            //GlobalData.thisLocation.width = SystemParameters.WorkArea.Width * scaleX;
+            //GlobalData.thisLocation.height = SystemParameters.WorkArea.Height * scaleY;
+
+            GlobalData.thisLocation.top = this.Top;
+            GlobalData.thisLocation.left = this.Left;
+            GlobalData.thisLocation.width = 1000;
+            GlobalData.thisLocation.height = 750;
         }
 
         private void bringUCtoFront(int index) {
@@ -80,7 +85,7 @@ namespace TestFunctionGW040x {
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e) {
             try {
-                this.DragMove();
+                //this.DragMove();
                 GlobalData.thisLocation.top = this.Top;
                 GlobalData.thisLocation.left = this.Left;
             }

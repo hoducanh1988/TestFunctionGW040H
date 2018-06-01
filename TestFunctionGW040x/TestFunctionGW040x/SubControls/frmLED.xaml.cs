@@ -64,6 +64,10 @@ namespace TestFunctionGW040x {
                         GlobalData.testingInfo.WLANJUD = !GlobalData.testingInfo.WLANJUD;
                         break;
                     }
+                case "grWlan5g": {
+                        GlobalData.testingInfo.WLAN5GJUD = !GlobalData.testingInfo.WLAN5GJUD;
+                        break;
+                    }
                 case "grWps": {
                         GlobalData.testingInfo.WPSJUD = !GlobalData.testingInfo.WPSJUD;
                         break;
@@ -99,6 +103,7 @@ namespace TestFunctionGW040x {
                         GlobalData.testingInfo.PONJUD = true;
                         GlobalData.testingInfo.INETJUD = true;
                         GlobalData.testingInfo.WLANJUD = true;
+                        GlobalData.testingInfo.WLAN5GJUD = true;
                         GlobalData.testingInfo.LAN1JUD = true;
                         GlobalData.testingInfo.LAN2JUD = true;
                         GlobalData.testingInfo.LAN3JUD = true;
@@ -112,6 +117,7 @@ namespace TestFunctionGW040x {
                                    GlobalData.testingInfo.PONJUD &&
                                    GlobalData.testingInfo.INETJUD &&
                                    GlobalData.testingInfo.WLANJUD &&
+                                   GlobalData.testingInfo.WLAN5GJUD &&
                                    GlobalData.testingInfo.LAN1JUD &&
                                    GlobalData.testingInfo.LAN2JUD &&
                                    GlobalData.testingInfo.LAN3JUD &&
@@ -127,6 +133,7 @@ namespace TestFunctionGW040x {
                                                                                                                               GlobalData.testingInfo.LAN2JUD,
                                                                                                                               GlobalData.testingInfo.LAN1JUD,
                                                                                                                               GlobalData.testingInfo.WLANJUD,
+                                                                                                                               GlobalData.testingInfo.WLAN5GJUD,
                                                                                                                               GlobalData.testingInfo.INETJUD,
                                                                                                                               GlobalData.testingInfo.PONJUD,
                                                                                                                               GlobalData.testingInfo.POWERJUD));
@@ -135,7 +142,8 @@ namespace TestFunctionGW040x {
                         GlobalData.testingInfo.LOGSYSTEM += string.Format("...\r\nLED POWER = {0}\r\n", GlobalData.testingInfo.POWERJUD == true ? "PASS" : "FAIL");
                         GlobalData.testingInfo.LOGSYSTEM += string.Format("LED PON = {0}\r\n", GlobalData.testingInfo.PONJUD == true ? "PASS" : "FAIL");
                         GlobalData.testingInfo.LOGSYSTEM += string.Format("LED INET = {0}\r\n", GlobalData.testingInfo.INETJUD == true ? "PASS" : "FAIL");
-                        GlobalData.testingInfo.LOGSYSTEM += string.Format("LED WLAN = {0}\r\n", GlobalData.testingInfo.WLANJUD == true ? "PASS" : "FAIL");
+                        GlobalData.testingInfo.LOGSYSTEM += string.Format("LED 2G = {0}\r\n", GlobalData.testingInfo.WLANJUD == true ? "PASS" : "FAIL");
+                        GlobalData.testingInfo.LOGSYSTEM += string.Format("LED 5G = {0}\r\n", GlobalData.testingInfo.WLAN5GJUD == true ? "PASS" : "FAIL");
                         GlobalData.testingInfo.LOGSYSTEM += string.Format("LED LAN1 = {0}\r\n", GlobalData.testingInfo.LAN1JUD == true ? "PASS" : "FAIL");
                         GlobalData.testingInfo.LOGSYSTEM += string.Format("LED LAN2 = {0}\r\n", GlobalData.testingInfo.LAN2JUD == true ? "PASS" : "FAIL");
                         GlobalData.testingInfo.LOGSYSTEM += string.Format("LED LAN3 = {0}\r\n", GlobalData.testingInfo.LAN3JUD == true ? "PASS" : "FAIL");

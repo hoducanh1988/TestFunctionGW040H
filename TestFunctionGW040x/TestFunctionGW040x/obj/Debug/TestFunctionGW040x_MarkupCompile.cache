@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\anhho\source\repos\Project\TestFunction-GW040\TestFunctionGW040x\TestFunctionGW040x\obj\Debug\
+C:\Users\anhho\source\repos\GitHub\TestFunctionGW040H\TestFunctionGW040x\TestFunctionGW040x\obj\Debug\
 TestFunctionGW040x
 none
 false
 DEBUG;TRACE
-C:\Users\anhho\source\repos\Project\TestFunction-GW040\TestFunctionGW040x\TestFunctionGW040x\App.xaml
+C:\Users\anhho\source\repos\GitHub\TestFunctionGW040H\TestFunctionGW040x\TestFunctionGW040x\App.xaml
 25540828606
 
-40-820109087
-16-1667284839
+361472825253
+16-1970613508
 Assets\Resources\Button.xaml;Assets\Resources\CheckBox.xaml;Assets\Resources\Combobox.xaml;Assets\Resources\customWindow.xaml;Assets\Resources\DataGrid.xaml;Assets\Resources\Label.xaml;Assets\Resources\Listbox.xaml;Assets\Resources\RadioButton.xaml;Assets\Resources\Slider.xaml;Assets\Resources\TabControl.xaml;Assets\Resources\Textbox.xaml;Assets\Resources\ToggleButton.xaml;MainWindow.xaml;SubControls\frmBUTTON.xaml;SubControls\frmCONFIRM.xaml;SubControls\frmLED.xaml;SubControls\frmMESSAGE.xaml;SubControls\frmPOWER.xaml;SubControls\LOGIN.xaml;UserControls\ucAbout.xaml;UserControls\ucHelp.xaml;UserControls\ucLogin.xaml;UserControls\ucSetting.xaml;UserControls\ucStep.xaml;UserControls\ucTesting.xaml;
 
-True
+False
 
