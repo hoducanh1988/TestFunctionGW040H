@@ -121,7 +121,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("A06518:A4F4C2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("A4F4C2")]
         public string Mac6digit {
             get {
                 return ((string)(this["Mac6digit"]));
@@ -277,7 +277,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public double DutTxMin {
             get {
                 return ((double)(this["DutTxMin"]));
@@ -289,7 +289,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public double DutTxMax {
             get {
                 return ((double)(this["DutTxMax"]));
@@ -301,7 +301,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-28")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-30")]
         public double DutRxMin {
             get {
                 return ((double)(this["DutRxMin"]));
@@ -313,7 +313,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-26")]
         public double DutRxMax {
             get {
                 return ((double)(this["DutRxMax"]));

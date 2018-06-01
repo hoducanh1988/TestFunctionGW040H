@@ -27,7 +27,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Mac6digit" Type="System.String" Scope="User">
-      <Value Profile="(Default)">A06518:A4F4C2</Value>
+      <Value Profile="(Default)">A4F4C2</Value>
     </Setting>
     <Setting Name="FwVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -66,16 +66,16 @@
       <Value Profile="(Default)">1/1/1/6</Value>
     </Setting>
     <Setting Name="DutTxMin" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">-8</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="DutTxMax" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">8</Value>
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="DutRxMin" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">-28</Value>
+      <Value Profile="(Default)">-30</Value>
     </Setting>
     <Setting Name="DutRxMax" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">-8</Value>
+      <Value Profile="(Default)">-26</Value>
     </Setting>
   </Settings>
 </SettingsFile>
