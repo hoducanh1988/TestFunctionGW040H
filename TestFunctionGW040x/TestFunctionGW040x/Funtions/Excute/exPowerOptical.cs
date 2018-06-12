@@ -89,7 +89,7 @@ namespace TestFunctionGW040x.Funtions {
                 //TX - check lap lai 10 lan, neu 10 lan deu NG => hien thi NG
                 count = 0;
                 REPEAT1:
-                GlobalData.testingInfo.logstep.logPowerOptical += "Đọc giá trị công suất phát TX...\r\n";
+                GlobalData.testingInfo.logstep.logPowerOptical += string.Format("Đọc giá trị công suất phát TX...Lần thứ {0}\r\n", count);
                 ontdevice.WriteLine("tcapi get Info_PonPhy TxPower");
                 Thread.Sleep(1000);
                 bool txRet = false;
@@ -106,7 +106,7 @@ namespace TestFunctionGW040x.Funtions {
                     txRet = (txPower <= GlobalData.initSetting.DUTTXMAX) && (txPower >= GlobalData.initSetting.DUTTXMIN);
                     if (txRet == false) {
                         count++;
-                        if (count < 10) goto REPEAT1; 
+                        if (count < 30) goto REPEAT1; 
                     }
                     GlobalData.testingInfo.logstep.logPowerOptical += string.Format("Kết quả đo công suất phát TX là: {0}\r\n", txRet == true ? "PASS" : "FAIL");
                     GlobalData.testingInfo.POWERTXSTATUS = txRet == true ? TestingStatuses.Pass : TestingStatuses.Fail;

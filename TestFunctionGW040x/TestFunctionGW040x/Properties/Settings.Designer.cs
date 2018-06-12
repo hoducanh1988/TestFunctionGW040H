@@ -181,7 +181,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.84.1.106")]
         public string OltIP {
             get {
                 return ((string)(this["OltIP"]));
@@ -193,7 +193,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("isadmin")]
         public string OltTelnetUser {
             get {
                 return ((string)(this["OltTelnetUser"]));
@@ -205,7 +205,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ans#150")]
         public string OltTelnetPass {
             get {
                 return ((string)(this["OltTelnetPass"]));
@@ -265,7 +265,7 @@ namespace TestFunctionGW040x.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1/1/1/6")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1/1/1/1")]
         public string OltPort {
             get {
                 return ((string)(this["OltPort"]));

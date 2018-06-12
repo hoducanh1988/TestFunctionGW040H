@@ -94,7 +94,7 @@
                             <!--MINUS-->
                             <Label FontSize="15" FontWeight="Bold" Content="-"></Label>
                             <!--OLT-->
-                            <Grid Height="300">
+                            <Grid Height="320">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="200"/>

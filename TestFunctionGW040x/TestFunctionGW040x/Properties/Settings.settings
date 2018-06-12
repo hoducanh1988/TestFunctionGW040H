@@ -42,13 +42,13 @@
       <Value Profile="(Default)">ttcn@77CN</Value>
     </Setting>
     <Setting Name="OltIP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">192.168.1.2</Value>
+      <Value Profile="(Default)">10.84.1.106</Value>
     </Setting>
     <Setting Name="OltTelnetUser" Type="System.String" Scope="User">
-      <Value Profile="(Default)">admin</Value>
+      <Value Profile="(Default)">isadmin</Value>
     </Setting>
     <Setting Name="OltTelnetPass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">admin</Value>
+      <Value Profile="(Default)">ans#150</Value>
     </Setting>
     <Setting Name="BarcodeType" Type="System.String" Scope="User">
       <Value Profile="(Default)">USB</Value>
@@ -63,7 +63,7 @@
       <Value Profile="(Default)">show pon unprovision-onu | match exact:</Value>
     </Setting>
     <Setting Name="OltPort" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1/1/1/6</Value>
+      <Value Profile="(Default)">1/1/1/1</Value>
     </Setting>
     <Setting Name="DutTxMin" Type="System.Double" Scope="User">
       <Value Profile="(Default)">2</Value>
